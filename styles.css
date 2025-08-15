@@ -27,7 +27,7 @@
         height: 1400px;
         display: grid;
         background-size: auto;
-        background: rgb(200, 200, 200);
+        background: var(--dark-gold);
         
 
     }
@@ -89,7 +89,7 @@
         justify-content: space-between;
         align-items: center;
         position: fixed;
-        border: 1px solid var(--gold);
+        /* border: 1px solid var(--gold); */
         border-radius: 15px;
         top: 30px;
         left: 0;
@@ -97,12 +97,17 @@
         z-index: 2;
         margin: auto;
         padding: 0px 10px;
-        background-color: black;
+        background: linear-gradient(
+            90deg,
+            var(--black) 15%,
+            var(--charcoal),
+            var(--black) 85%
+        );
         height: 10rem;
         width: 80%;
         box-shadow: 10px 10px 100px var(--black) ;
     }   .nav-img {
-        height: 120px;
+        height: 12rem;
         }
             .nav-bar ul {
                 display: flex;
@@ -110,7 +115,7 @@
                 left: 0;
                 right: 0;
                 place-content: center;
-                gap: 80px;
+                column-gap: 5rem;
                 margin: auto;
             } 
                 .nav-bar ul li {
@@ -119,10 +124,11 @@
                     justify-content: center;
                 } 
                     .nav-bar ul li a {
-                        color: var(--light-grey);
+                        color: var(--gold);
                         text-decoration: none;
                         font-size: 2rem;
                         font-family: "Poppins", sans-serif;
+                        animation: glow 1s ease-in-out 1s infinite alternate forwards;
 
                         /* border: 1px solid red; */
                         /* transition: all 0.5s ease; */
@@ -134,6 +140,8 @@
                             /* border-radius: 15px; */
                             /* background-color: var(--light-gold); */
                         
+                        } .fa-angle-down {
+                            font-size: 1.5rem;
                         }
 .priimium_alt {
     height: 6rem;
@@ -167,6 +175,8 @@
         color: var(--black);
         background-color: var(--gold);
         z-index: 2;
+    } .get-started:hover {
+        box-shadow: 0px 0px 10px var(--gold);
     }
 
     .sign-in {
@@ -176,24 +186,12 @@
         border-radius: 7px;
         color: var(--light-gold);
         /* background-color: var(--gold); */
-        transition: all 0.5s ease;
-        
-        background: linear-gradient(
-            90deg,
-            var(--gold),
-            var(--black) 0%,
-            var(--black) 100%
-            
-        );
+        /* transition: all 0.5s ease; */
+        background-color: var(--black
+        )
     } .sign-in:hover {
-        background: linear-gradient(
-            90deg,
-            var(--gold),
-            var(--gold) 100%,
-            var(--black),
-            var(--black)
-            
-        );
+        box-shadow: 0px 0px 10px var(--gold);
+
     }
 
     .categories-menu {
@@ -293,8 +291,8 @@
     .preview {
         display: flex;
         place-content: center;
-        height: 600px;
-        width: 50%;
+        height: 70rem;
+        width: 53.5%;
         margin: auto;
         background: linear-gradient(
             var(--dark-gold),
@@ -309,6 +307,13 @@
         right: 0;
         box-shadow: 0px 0px 50px var(--gold) ;
     } 
+
+    .preview-video {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+    }
+
 
 
     
@@ -398,6 +403,82 @@
     }
 
 
+
+    @media only screen and (max-width: 1600px) {
+        html {
+            font-size: 38%;
+        }
+
+        .onboarding {
+            /* scale: 0.8; */
+
+        } 
+        .nav-btn {
+            /* scale: 0.8; */
+
+        }
+    }
+    
+        @media only screen and (max-width: 1000px) {
+        html {
+            font-size: 35%;
+            
+        }
+        .nav-list {
+            visibility: hidden;
+            display: none;
+        }
+
+        .onboarding {
+            display: flex;
+
+        }
+    }
+
+
+
+
+    /* MOBILE */
     @media only screen and (max-width: 720px) {
         
-    }
+        html {
+            font-size: 50%;
+        }
+
+        .header {
+            /* overflow: hidden; */
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-evenly;
+            height: 60px;
+        }
+
+
+        .nav-img {
+            height: 70px;
+        }
+
+        .name {
+            /* margin-left: 200px; */
+            height: 2rem;
+
+        }
+
+        .nav-list {
+            display: none;
+            visibility: hidden;
+        }
+
+        .onboarding {
+            display: none;
+            visibility: hidden;
+        }
+
+
+        
+
+
+
+    }   
